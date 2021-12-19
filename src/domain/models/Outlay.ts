@@ -1,7 +1,5 @@
-export type OutlayId = string
-
 export type Outlay = {
-  id: OutlayId
+  id: string
   namePerson: string
   nameOutlay: string
   price: number

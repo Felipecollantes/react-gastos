@@ -15,13 +15,8 @@ export const outlayRepository = {
       }))
     },
   
-    addOutlay: async () => {
-      const outlays = await http.post<any>('http://localhost:3001/products', JSON.stringify({
-        id: uuid.v4(),
-        namePerson: 'Marisa',
-        nameOutlay: 'Cena',
-        price: '40.50'
-      }))
+    addOutlay: async (body: Outlay) => {
+      const outlays = await http.post<any>('http://localhost:3001/products', JSON.stringify(body))
       return outlays
     }
   }

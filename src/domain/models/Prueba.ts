@@ -1,6 +1,7 @@
 export type Prueba = {
-    id: string
-    desc: string
-    done: boolean
+  id: string
+  namePerson: string
+  nameOutlay: string
+  price: number
   }
   

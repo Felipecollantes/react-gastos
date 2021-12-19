@@ -1,17 +1,18 @@
-import { Prueba } from '../../domain/models/Prueba'
 import * as uuid from 'uuid'
+import { Outlay } from '../../domain/models/Outlay'
 
 export const initialState = [
   {
     id: uuid.v4(),
-    desc: 'Aprender React',
-    done: false,
+    namePerson: '',
+    nameOutlay: '',
+    price: 0,
   },
 ]
 
 export type ActionType = {
   type: 'add'
-  payload: Prueba
+  payload: Outlay
 }
 
 export const todoReducer = (state = initialState, action: ActionType) => {
