@@ -1,4 +1,3 @@
-import * as uuid from 'uuid'
 import { Outlay } from '../../domain/models/Outlay'
 import { OutlayDTO } from '../http/dto/outlayDto'
 import { http } from '../http/http'
@@ -11,7 +10,8 @@ export const outlayRepository = {
         id: outlayDto.id,
         namePerson: outlayDto.namePerson,
         nameOutlay: outlayDto.nameOutlay,
-        price: Number(outlayDto.price)
+        price: Number(outlayDto.price),
+        date: outlayDto.date
       }))
     },
   

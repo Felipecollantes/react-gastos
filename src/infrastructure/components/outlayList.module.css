@@ -1,0 +1,21 @@
+.group {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  padding: 0 4%;
+}
+
+.list {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+  padding-right: 4%;
+}
+
+.form {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}

@@ -9,12 +9,6 @@ type AppProps = {
 }
 
 const App: FC<AppProps> = ({ msg }) => {
-  // const [list, setList] = useState<List | undefined>(undefined)
-
-  // const handleAddToCart = (outlay: Outlay) => {
-  //   setList(listService.addOutlayToList(outlay, list))
-  // }
-
   return (
     <div className="App">
       <OutlayList />

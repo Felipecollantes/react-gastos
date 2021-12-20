@@ -3,4 +3,5 @@ export type Outlay = {
   namePerson: string
   nameOutlay: string
   price: number
+  date: number
 }
