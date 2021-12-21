@@ -4,4 +4,6 @@ export type Outlay = {
   nameOutlay: string
   price: number
   date: number
+  since: string
+  diffPrice: number
 }

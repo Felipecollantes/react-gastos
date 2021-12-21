@@ -4,4 +4,6 @@ export interface OutlayDTO {
     nameOutlay: string
     price: number
     date: number
+    since: string
+    diffPrice: number
   }

@@ -4,14 +4,17 @@ import * as uuid from 'uuid'
 import { outlayService } from '../../domain/services/Outlay.service'
 import { useForm } from '../../hooks/useForm'
 import styles from './form.module.css'
+import { Props } from '../../domain/models/Props'
 
-export const Form = () => {
+export const Form = ({ outlays, setOutlays }: Props) => {
   const { formData, onChange, resetForm, namePerson, nameOutlay, price } = useForm({
     namePerson: '',
     nameOutlay: '',
     price: 0,
     date: 0,
   })
+
+  console.log(outlays)
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -23,16 +26,49 @@ export const Form = () => {
       nameOutlay: nameOutlay,
       price: price,
       date: Date.now(),
+      since: 'Hace unos segundos...',
+      diffPrice: 0,
     }
 
     outlayService.addOutlay(newTodo)
     resetForm()
-    // outlayService.getOutlays().then(setOutlays)
+
+    setOutlays([...outlays, newTodo].reverse())
+    // calculo(outlays)
   }
+
+  // const calculo = (outlays: any) => {
+  //   console.log('[Calculo]', outlays)
+  //   let total = 0
+  //   outlays.forEach((element: any) => {
+  //     // console.log('PRECIO', element.price)
+  //     total = element.price + total
+  //   })
+  //   console.log('[Calculo]', 'TOTAL', total)
+
+  //   const equitativo = total / outlays.length
+  //   // console.log('CUANTO CADA UNO', equitativo)
+
+  //   let diferencia = 0
+  //   let arrayDif: number[] = []
+
+  //   outlays.forEach((element: any) => {
+  //     diferencia = equitativo - element.price
+  //     console.log('[Calculo]', diferencia)
+  //     // setDiferencias([...diferencias, diferencia])
+  //     element.diffPrice = diferencia
+  //     arrayDif.push(diferencia)
+  //   })
+
+  //   // console.log('ARRAY DIFERENCIA', arrayDif)
+  //   // setDiferencias(arrayDif)
+  //   // console.log(diferencias)
+  //   // console.log(diferencias)
+  // }
 
   return (
     <>
-      <h4>Agregar TODO</h4>
+      <h4>Agregar Gasto</h4>
       <hr />
 
       <form onSubmit={onSubmit}>
