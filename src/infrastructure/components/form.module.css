@@ -30,3 +30,7 @@
   width: 100%;
   margin-top: 0.25rem !important;
 }
+
+.button:hover {
+  filter: brightness(120%);
+}
