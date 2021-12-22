@@ -12,7 +12,7 @@ export const useForm = <T>(initialState: T) => {
     }
 
     const resetForm = () => {
-        setFormData({...initialState})
+        setFormData({ ...initialState })
     }
 
     return {
