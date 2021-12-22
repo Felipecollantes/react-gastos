@@ -24,16 +24,10 @@ describe('Test useForm', () => {
   test('Render Form', () => {
     render(<Form outlays={outlays} setOutlays={setOutlays} />)
     screen.getByText(translate.FORM.TITLE)
-
-    // const submit = screen.getByTestId('btn-submit')
-    // fireEvent.click(submit)
   })
 
   test('Submit Form', () => {
     render(<Form outlays={outlays} setOutlays={setOutlays} />)
-    // fireEvent.change(screen.getByTestId('namePerson'),{
-    //     target:{value:''}
-    // })
     // const newTodo = [
     //   {
     //     id: '1213erf',
