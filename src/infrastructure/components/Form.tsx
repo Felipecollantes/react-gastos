@@ -5,6 +5,7 @@ import { outlayService } from '../../domain/services/Outlay.service'
 import { useForm } from '../../hooks/useForm'
 import styles from './form.module.css'
 import { Props } from '../../domain/models/Props'
+import translate from '../../i18n'
 
 export const Form = ({ outlays, setOutlays }: Props) => {
   const { formData, onChange, resetForm, namePerson, nameOutlay, price } = useForm({
@@ -13,8 +14,6 @@ export const Form = ({ outlays, setOutlays }: Props) => {
     price: 0,
     date: 0,
   })
-
-  console.log(outlays)
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -68,42 +67,46 @@ export const Form = ({ outlays, setOutlays }: Props) => {
 
   return (
     <>
-      <h4>Agregar Gasto</h4>
+      <h4>{translate.FORM.TITLE}</h4>
       <hr />
 
       <form onSubmit={onSubmit}>
         <input
+          data-testid="namePerson"
           className={styles.input}
           type="text"
           name="namePerson"
-          placeholder="Nombre de la persona"
+          placeholder={translate.FORM.INPUT_PERSON}
           autoComplete="off"
           value={namePerson}
           onChange={onChange}
+          required
         />
 
         <input
           className={styles.input}
           type="text"
           name="nameOutlay"
-          placeholder="Motivo del gasto"
+          placeholder={translate.FORM.INPUT_OUTLAY}
           autoComplete="off"
           value={nameOutlay}
           onChange={onChange}
+          required
         />
 
         <input
           className={styles.input}
           type="number"
           name="price"
-          placeholder="Cantidad"
+          placeholder={translate.FORM.INPUT_AMOUNT}
           autoComplete="off"
           value={price || ''}
           onChange={onChange}
+          required
         />
 
-        <button type="submit" className="btn btn-outline-primary mt-1 w-100">
-          Agregar
+        <button type="submit" className={styles.button}>
+          {translate.FORM.BUTTON}
         </button>
       </form>
     </>
