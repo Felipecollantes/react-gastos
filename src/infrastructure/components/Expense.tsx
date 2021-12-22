@@ -1,6 +1,6 @@
 import React from 'react'
 import translate from '../../i18n'
-import styles from './list.module.css'
+import styles from './expense.module.css'
 
 export const Expense = ({ outlay }: any) => {
   return (
