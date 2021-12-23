@@ -21,7 +21,7 @@ export const OutlayList = () => {
 
   const callback = () => {
     outlayService.getOutlays().then((data) => {
-      listService.calculo(data)
+      listService.calcDiffPrice(data)
       data.forEach((respo) => {
         listService.parseDate(respo)
         setOutlays([...data].reverse())
