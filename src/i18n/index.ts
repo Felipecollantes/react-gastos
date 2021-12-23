@@ -7,6 +7,7 @@ const translate =  {
         BUTTON: 'Agregar'
     },
     LIST:{
+        OUTLAYS: 'Gastos',
         TITLE: 'Lista Gastos',
         PERSON:'Persona',
         REASON:'Motivo',
