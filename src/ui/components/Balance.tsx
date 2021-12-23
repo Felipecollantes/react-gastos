@@ -3,10 +3,18 @@ import translate from '../../assets/i18n'
 import styles from '../styles/balance.module.css'
 
 export const Balance = ({ outlay }: any) => {
+  /**
+   * Method to return the style
+   * @returns style color green
+   */
   const getStyleGreen = () => {
     return styles.green
   }
 
+  /**
+   * Method to return the style
+   * @returns style color red
+   */
   const getStyleRed = () => {
     return styles.red
   }

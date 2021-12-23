@@ -14,6 +14,10 @@ export const Form = ({ parentCallBack }: any) => {
     date: 0,
   })
 
+  /**
+   * Method to add the new outlay
+   * @param event the event from input (value)
+   */
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     console.log(formData)

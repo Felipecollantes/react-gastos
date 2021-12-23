@@ -19,6 +19,9 @@ export const OutlayList = () => {
     callback()
   }, [])
 
+  /**
+   * Method that returns the outlays
+   */
   const callback = () => {
     outlayService.getOutlays().then((data) => {
       listService.calcDiffPrice(data)
