@@ -1,22 +1,22 @@
+// Components
 import { List } from './List'
 import { Form } from './Form'
+// Style
 import styles from './outlayList.module.css'
+// Hooks
 import { useEffect, useState } from 'react'
-import { Outlay } from '../../domain/models/Outlay'
+// Services
 import { outlayService } from '../../domain/services/Outlay.service'
+//Models
+import { Outlay } from '../../domain/models/Outlay'
+import translate from '../../i18n'
 
 export const OutlayList = () => {
   const [outlays, setOutlays] = useState<Outlay[]>([])
+
   useEffect(() => {
-    outlayService.getOutlays().then((data) => {
-      calculo(data)
-      data.forEach((respo) => {
-        parseDate(respo)
-        setOutlays([...data].reverse())
-      })
-    })
+    callback()
   }, [])
-  // console.log(outlays)
 
   const parseDate = (respo: any) => {
     const ahora = Date.now()
@@ -48,41 +48,52 @@ export const OutlayList = () => {
     console.log(data)
     let total = 0
     data.forEach((element: Outlay) => {
-      // console.log('PRECIO', element.price)
-      total = element.price + total
+      total += +element.price
     })
-    console.log('TOTAL', total)
+    console.log('[Calculo]', 'TOTAL', total)
 
     const equitativo = total / data.length
-    // console.log('CUANTO CADA UNO', equitativo)
+    console.log('[Calculo]', 'equitativo', equitativo)
 
     let diferencia = 0
     let arrayDif: number[] = []
 
     data.forEach((element: Outlay) => {
       diferencia = equitativo - element.price
-      // console.log(diferencia)
-      // setDiferencias([...diferencias, diferencia])
+      diferencia = Math.round(diferencia * 100) / 100
+      console.log('[Calculo]', 'diferencia', diferencia)
+
       element.diffPrice = diferencia
       arrayDif.push(diferencia)
     })
+    console.log('ARRAY DIFERENCIA', arrayDif)
+    console.log('DATA', data)
+    // setOutlays(data)
+  }
 
-    // console.log('ARRAY DIFERENCIA', arrayDif)
-    // setDiferencias(arrayDif)
-    // console.log(diferencias)
-    // console.log(diferencias)
+  const callback = () => {
+    outlayService.getOutlays().then((data) => {
+      calculo(data)
+      data.forEach((respo) => {
+        parseDate(respo)
+        setOutlays([...data].reverse())
+      })
+    })
+    // console.log(newOutlay)
+    // calculo(newOutlay)
+    // setOutlays([...outlays, newOutlay].reverse())
   }
 
   return (
     <div>
-      <h1>Gastos</h1>
+      <h1>{translate.LIST.OUTLAYS}</h1>
       <hr />
       <div className={styles.group}>
         <div className={styles.form}>
-          <Form outlays={outlays} setOutlays={setOutlays} />
+          <Form outlays={outlays} parentCallBack={callback} />
         </div>
         <div className={styles.list}>
-          <List outlays={outlays} setOutlays={setOutlays} />
+          <List outlays={outlays} />
         </div>
       </div>
     </div>

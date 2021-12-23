@@ -5,23 +5,20 @@ import { Expense } from './Expense'
 import { Props } from '../../domain/models/Props'
 import translate from '../../i18n'
 
-export const List = ({ outlays, setOutlays }: Props) => {
+export const List = ({ outlays }: any) => {
   return (
     <>
       <h4>{translate.LIST.TITLE}</h4>
       <hr />
-      <ul className={styles.group}>
-        {outlays.map((outlay: Outlay, indice: number) => (
-          <Expense key={outlay.id} outlay={outlay} setOutlays={setOutlays} />
-        ))}
-      </ul>
+      {outlays.map((outlay: Outlay) => (
+        <Expense key={outlay.id} outlay={outlay} />
+      ))}
       <hr />
-      <br />
       <ul className={styles.group}>
-        {outlays.map((outlay: Outlay, indice: number) => (
+        {outlays.map((outlay: Outlay) => (
           <li key={outlay.id} className={styles.item}>
             <p className={styles.center}>
-              <b>{outlay.namePerson}: </b> {outlay.diffPrice}
+              <b>{outlay.namePerson}: </b> {outlay.diffPrice}€
             </p>
           </li>
         ))}
