@@ -4,6 +4,10 @@ export const useForm = <T>(initialState: T) => {
 
     const [formData, setFormData] = useState(initialState)
 
+    /**
+     * Method that changes the formData and inserts the field in the input
+     * @param event the element of input
+     */
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setFormData(prev => ({
             ...prev,
@@ -11,6 +15,9 @@ export const useForm = <T>(initialState: T) => {
         }))
     }
 
+    /**
+     * Method to reset the form
+     */
     const resetForm = () => {
         setFormData({ ...initialState })
     }

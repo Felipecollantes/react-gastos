@@ -1,19 +1,24 @@
 import { Outlay } from "../models/Outlay"
 
-
-const parseDate = (respo: any) => {
-  const ahora = Date.now();
-  const fechita = new Date(ahora);
+/**
+ * Method that calculates the time elapsed since the insertion of the expense
+ * @param outlay the outlay
+ */
+const parseDate = (outlay: Outlay) => {
+  const now = Date.now();
+  const dateNow = new Date(now); // Now date
 
   let seconds: number;
   let minutes: number;
   let hours: number;
   let days: number;
-  const parseDate = new Date(respo.date);
-  seconds = (fechita.getTime() - parseDate.getTime()) / 1000;
+  const parseDate = new Date(outlay.date); // Parse to date the outlay date
+  // We calculate the time in hours, minutes and seconds
+  seconds = (dateNow.getTime() - parseDate.getTime()) / 1000;
   minutes = Math.trunc(seconds / 60);
   hours = Math.trunc(minutes / 60);
   days = Math.trunc(hours / 24);
+  // We check what we show on the screen
   let result: string;
   if (days > 0) {
     result = 'Hace ' + String(days) + ' dia(s)';
@@ -24,10 +29,15 @@ const parseDate = (respo: any) => {
   } else {
     result = 'Hace unos segundos...';
   }
-  respo.since = result;
+  outlay.since = result;
 }
 
-const calculo = (data: Outlay[]) => {
+/**
+ * Method that calculates the difference between 
+ * a person's spending compared to the total
+ * @param data outlays list
+ */
+const calcDiffPrice = (data: Outlay[]) => {
   let total = 0;
   data.forEach((element: Outlay) => {
     total += +element.price;
@@ -45,6 +55,6 @@ const calculo = (data: Outlay[]) => {
 }
   
   export const listService = {
-    calculo, parseDate
+    calcDiffPrice, parseDate
   }
   
