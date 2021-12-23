@@ -5,7 +5,6 @@ import { http } from '../http/http'
 export const outlayRepository = {
     getOutlays: async () => {
       const outlays = await http.get<OutlayDTO[]>('http://localhost:3001/products')
-      // we can extract this transform to a function inside this file to be reused by different methods
       return outlays.map((outlayDto): OutlayDTO => ({
         id: outlayDto.id,
         namePerson: outlayDto.namePerson,
