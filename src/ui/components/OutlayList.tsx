@@ -35,7 +35,7 @@ export const OutlayList = () => {
       <hr />
       <div className={styles.group}>
         <div className={styles.form}>
-          <Form outlays={outlays} parentCallBack={callback} />
+          <Form parentCallBack={callback} />
         </div>
         <div className={styles.list}>
           <List outlays={outlays} />
