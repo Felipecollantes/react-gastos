@@ -34,3 +34,7 @@
 .button:hover {
   filter: brightness(120%);
 }
+
+.padding-left {
+  padding-left: 3%;
+}

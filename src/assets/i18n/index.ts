@@ -1,4 +1,7 @@
 const translate =  {
+    GLOBAL:{
+        EUR: '€'
+    },
     FORM:{
         TITLE: 'Agregar Gasto',
         INPUT_PERSON:'Nombre de la persona',
@@ -7,12 +10,15 @@ const translate =  {
         BUTTON: 'Agregar'
     },
     LIST:{
-        OUTLAYS: 'Gastos',
-        TITLE: 'Lista Gastos',
+        OUTLAYS: 'Prueba de Gastos',
+        NOT_OUTLAYS: 'No hay gastos',
+        TITLE_OUTLAYS: 'Lista Gastos',
         PERSON:'Persona',
         REASON:'Motivo',
         OUTLAY:'Gasto',
         DATE:'Fecha',
+        TITLE_BALANCE: 'Balance',
+
     }
 }
 

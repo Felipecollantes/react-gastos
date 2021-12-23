@@ -38,7 +38,7 @@ export const Form = ({ parentCallBack }: any) => {
       <h4>{translate.FORM.TITLE}</h4>
       <hr />
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className={styles['padding-left']}>
         <input
           data-testid="namePerson"
           className={styles.input}

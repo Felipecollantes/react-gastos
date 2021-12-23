@@ -31,7 +31,7 @@ export const OutlayList = () => {
 
   return (
     <div>
-      <h1>{translate.LIST.OUTLAYS}</h1>
+      <h1 className={styles['title-center']}>{translate.LIST.OUTLAYS}</h1>
       <hr />
       <div className={styles.group}>
         <div className={styles.form}>

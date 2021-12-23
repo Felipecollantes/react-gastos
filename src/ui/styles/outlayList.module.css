@@ -19,3 +19,7 @@
   flex: 0 0 auto;
   width: 41.66666667%;
 }
+
+.title-center {
+  text-align: center;
+}
