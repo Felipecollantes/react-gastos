@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
-import { useForm } from '../src/domain/hooks/useForm'
 import { renderHook } from '@testing-library/react-hooks'
+import { useForm } from '../domain/hooks/useForm'
 
 describe('Test useForm', () => {
   const outlay = {

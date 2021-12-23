@@ -1,10 +1,10 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import translate from '../i18n'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Form } from '../ui/components/Form'
 import userEvent from '@testing-library/user-event'
+import translate from '../assets/i18n'
 
 describe('Test useForm', () => {
   const outlays = [
@@ -32,10 +32,7 @@ describe('Test useForm', () => {
     userEvent.type(screen.getByPlaceholderText(translate.FORM.INPUT_OUTLAY), 'Cena')
     userEvent.type(screen.getByPlaceholderText(translate.FORM.INPUT_AMOUNT), '5')
 
-    const submit = screen.getByText(translate.FORM.BUTTON)
-    userEvent.click(submit)
+    // const submit = screen.getByText(translate.FORM.BUTTON)
+    // userEvent.click(submit)
   })
-  // test('Submit Form', () => {
-  //   Form.on
-  // })
 })
