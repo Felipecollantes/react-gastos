@@ -22,7 +22,6 @@ test('renders content', () => {
   screen.getByText(`${translate.LIST.REASON}:`)
   screen.getByText('Cena')
   screen.getByText(`${translate.LIST.OUTLAY}:`)
-  screen.getByText(5)
-  screen.getByText(`${translate.LIST.DATE}:`)
+  screen.getByText(5 + '€')
   screen.getByText('Hace 5 dias')
 })

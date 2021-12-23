@@ -27,19 +27,7 @@ describe('Test useForm', () => {
   })
 
   test('Submit Form', () => {
-    render(<Form outlays={outlays} setOutlays={setOutlays} />)
-    // const newTodo = [
-    //   {
-    //     id: '1213erf',
-    //     namePerson: 'Felipe',
-    //     nameOutlay: 'Cena',
-    //     price: 5,
-    //     date: 123445,
-    //     since: 'Hace 5 dias',
-    //     diffPrice: 0,
-    //   },
-    // ]
-
+    render(<Form outlays={outlays} parentCallBack />)
     userEvent.type(screen.getByPlaceholderText(translate.FORM.INPUT_PERSON), 'Felipe')
     userEvent.type(screen.getByPlaceholderText(translate.FORM.INPUT_OUTLAY), 'Cena')
     userEvent.type(screen.getByPlaceholderText(translate.FORM.INPUT_AMOUNT), '5')
@@ -47,4 +35,7 @@ describe('Test useForm', () => {
     const submit = screen.getByText(translate.FORM.BUTTON)
     userEvent.click(submit)
   })
+  // test('Submit Form', () => {
+  //   Form.on
+  // })
 })

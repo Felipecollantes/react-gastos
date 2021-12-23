@@ -22,23 +22,4 @@ describe('Test useForm', () => {
     expect(typeof onChange).toBe('function')
     expect(typeof resetForm).toBe('function')
   })
-
-  //   test('Reset form', () => {
-  //     const { result } = renderHook(() => useForm(outlay))
-  //     const { formData, onChange, resetForm } = result.current
-
-  //     act(() => {
-  //       onChange({
-  //         target: {
-  //           id: '1213erf',
-  //           namePerson: 'Felipe',
-  //           nameOutlay: 'Cena',
-  //           price: 5,
-  //           date: 123445,
-  //           since: 'Hace 5 dias',
-  //           diffPrice: 0,
-  //         },
-  //       })
-  //     })
-  //   })
 })
