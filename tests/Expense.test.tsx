@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import { Expense } from '../infrastructure/components/Expense'
+import { Expense } from '../ui/components/Expense'
 import translate from '../i18n'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'

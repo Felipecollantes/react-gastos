@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
-import { useForm } from '../hooks/useForm'
+import { useForm } from '../src/domain/hooks/useForm'
 import { renderHook } from '@testing-library/react-hooks'
 
 describe('Test useForm', () => {

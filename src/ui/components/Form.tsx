@@ -2,18 +2,17 @@ import React, { FormEvent } from 'react'
 import { Outlay } from '../../domain/models/Outlay'
 import * as uuid from 'uuid'
 import { outlayService } from '../../domain/services/Outlay.service'
-import { useForm } from '../../hooks/useForm'
-import styles from './form.module.css'
-import translate from '../../i18n'
+import { useForm } from '../../domain/hooks/useForm'
+import styles from '../styles/form.module.css'
+import translate from '../../assets/i18n'
 
-export const Form = ({ outlays, parentCallBack }: any) => {
+export const Form = ({ parentCallBack }: any) => {
   const { formData, onChange, resetForm, namePerson, nameOutlay, price } = useForm({
     namePerson: '',
     nameOutlay: '',
     price: 0,
     date: 0,
   })
-  // console.log('ANTES DEL PRESENTE', outlays)
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -31,49 +30,9 @@ export const Form = ({ outlays, parentCallBack }: any) => {
 
     outlayService.addOutlay(newOutlay)
 
-    // parentCallBack(newOutlay)
-
-    // setOutlays([...outlays, newTodo].reverse())
-    // console.log('PRESENTE', outlays)
-    // const array = outlays
-    // console.log('ANTES', array)
-    // array.unshift(newOutlay)
-    // console.log('DESPUES', array)
-    // calculo(array)
-
     parentCallBack()
     resetForm()
   }
-
-  // const calculo = (outlays: any) => {
-  //   console.log('[Calculo]', outlays)
-  //   let total = 0
-  //   outlays.forEach((element: any) => {
-  //     console.log('PRECIO', element.price)
-  //     element.price += element.price
-  //   })
-  //   console.log('[Calculo]', 'TOTAL', total)
-
-  // const equitativo = total / outlays.length
-  // // console.log('CUANTO CADA UNO', equitativo)
-
-  // let diferencia = 0
-  // let arrayDif: number[] = []
-
-  // outlays.forEach((element: any) => {
-  //   diferencia = equitativo - element.price
-  //   console.log('[Calculo]', diferencia)
-  //   // setDiferencias([...diferencias, diferencia])
-  //   element.diffPrice = diferencia
-  //   arrayDif.push(diferencia)
-  // })
-
-  // console.log('ARRAY DIFERENCIA', arrayDif)
-  // setDiferencias(arrayDif)
-  // console.log(diferencias)
-  // console.log(diferencias)
-  // }
-
   return (
     <>
       <h4>{translate.FORM.TITLE}</h4>

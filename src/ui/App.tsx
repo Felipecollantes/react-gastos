@@ -1,4 +1,4 @@
-import { OutlayList } from './OutlayList'
+import { OutlayList } from './components/OutlayList'
 
 const App = () => {
   return (

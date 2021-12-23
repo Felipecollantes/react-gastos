@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect'
 import translate from '../i18n'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { Form } from '../infrastructure/components/Form'
+import { Form } from '../ui/components/Form'
 import userEvent from '@testing-library/user-event'
 
 describe('Test useForm', () => {

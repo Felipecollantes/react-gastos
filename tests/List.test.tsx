@@ -2,7 +2,7 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { List } from '../infrastructure/components/List'
+import { List } from '../ui/components/List'
 import translate from '../i18n'
 
 test('renders content', () => {

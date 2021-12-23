@@ -1,9 +1,8 @@
 import React from 'react'
 import { Outlay } from '../../domain/models/Outlay'
-import styles from './list.module.css'
+import styles from '../styles/list.module.css'
 import { Expense } from './Expense'
-import { Props } from '../../domain/models/Props'
-import translate from '../../i18n'
+import translate from '../../assets/i18n'
 
 export const List = ({ outlays }: any) => {
   return (
