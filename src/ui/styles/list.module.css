@@ -38,3 +38,8 @@
 .green {
   color: green;
 }
+
+.not-outlays {
+  text-align: center;
+  color: gray;
+}

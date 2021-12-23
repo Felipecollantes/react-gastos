@@ -1,9 +1,12 @@
 const headers = {
     'Content-Type': 'application/json'
   }
+
+  const urlBase = 'http://localhost:3001/';
   
   const get = async <T>(url: string) => {
-    const response = await fetch(url, {
+    const urlFinal = urlBase + url;
+    const response = await fetch(urlFinal, {
       method: 'GET',
       headers
     })
@@ -11,7 +14,8 @@ const headers = {
   }
   
   const post = async <T>(url: string, body: any) => {
-    const response = await fetch(url, {
+    const urlFinal = urlBase + url;
+    const response = await fetch(urlFinal, {
       method: 'POST',
       headers,
       body
@@ -20,7 +24,8 @@ const headers = {
   }
   
   const put = async <T>(url: string, body: any) => {
-    const response = await fetch(url, {
+    const urlFinal = urlBase + url;
+    const response = await fetch(urlFinal, {
       method: 'PUT',
       headers,
       body
@@ -29,7 +34,8 @@ const headers = {
   }
   
   const _delete = async <T>(url: string) => {
-    const response = await fetch(url, {
+    const urlFinal = urlBase + url;
+    const response = await fetch(urlFinal, {
       method: 'DELETE',
       headers
     })

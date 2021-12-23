@@ -4,7 +4,7 @@ import { http } from '../http/http'
 
 export const outlayRepository = {
     getOutlays: async () => {
-      const outlays = await http.get<OutlayDTO[]>('http://localhost:3001/products')
+      const outlays = await http.get<OutlayDTO[]>('products')
       return outlays.map((outlayDto): OutlayDTO => ({
         id: outlayDto.id,
         namePerson: outlayDto.namePerson,
@@ -17,7 +17,7 @@ export const outlayRepository = {
     },
   
     addOutlay: async (body: Outlay) => {
-      const outlays = await http.post<OutlayDTO>('http://localhost:3001/products', JSON.stringify(body))
+      const outlays = await http.post<OutlayDTO>('products', JSON.stringify(body))
       return outlays
     }
   }

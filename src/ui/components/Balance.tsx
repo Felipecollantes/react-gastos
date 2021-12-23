@@ -1,8 +1,13 @@
 import React from 'react'
 import translate from '../../assets/i18n'
 import styles from '../styles/balance.module.css'
+import { Outlay } from '../../domain/models/Outlay'
 
-export const Balance = ({ outlay }: any) => {
+type OutlayProp = {
+  outlay: Outlay
+}
+
+export const Balance = ({ outlay }: OutlayProp) => {
   /**
    * Method to return the style
    * @returns style color green

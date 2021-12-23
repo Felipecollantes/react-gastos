@@ -5,13 +5,16 @@ import { Expense } from './Expense'
 import translate from '../../assets/i18n'
 import { Balance } from './Balance'
 
-export const List = ({ outlays }: any) => {
+type OutlayProp = {
+  outlays: Outlay[]
+}
+export const List = ({ outlays }: OutlayProp) => {
   return (
     <>
       <h4>{translate.LIST.TITLE_OUTLAYS}</h4>
       <hr />
       {outlays.length === 0 ? (
-        <p>{translate.LIST.NOT_OUTLAYS}</p>
+        <p className={styles['not-outlays']}>{translate.LIST.NOT_OUTLAYS}</p>
       ) : (
         outlays.map((outlay: Outlay) => <Expense key={outlay.id} outlay={outlay} />)
       )}

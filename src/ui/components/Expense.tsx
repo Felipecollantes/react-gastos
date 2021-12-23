@@ -1,8 +1,12 @@
 import React from 'react'
 import translate from '../../assets/i18n'
+import { Outlay } from '../../domain/models/Outlay'
 import styles from '../styles/expense.module.css'
 
-export const Expense = ({ outlay }: any) => {
+type OutlayProp = {
+  outlay: Outlay
+}
+export const Expense = ({ outlay }: OutlayProp) => {
   return (
     <>
       <ul className={styles.cards}>

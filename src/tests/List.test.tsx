@@ -18,8 +18,6 @@ test('renders content', () => {
     },
   ]
 
-  const setOutlays = null
-
-  render(<List outlays={outlays} setOutlays={setOutlays} />)
+  render(<List outlays={outlays} />)
   screen.getByText(translate.LIST.TITLE_OUTLAYS)
 })
